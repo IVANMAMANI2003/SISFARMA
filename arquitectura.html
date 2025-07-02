@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arquitectura Cloud - SISFARMA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .arrow {
+      position: relative;
+    }
+    .arrow::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 12px solid #000;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans p-8">
+  <h1 class="text-3xl font-bold mb-8 text-center">Arquitectura en la Nube - SISFARMA</h1>
+
+  <div class="flex flex-col items-center space-y-12">
+
+    <!-- Cliente Web -->
+    <div class="text-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" class="w-20 mx-auto" alt="Cliente Web">
+      <p class="text-lg font-semibold">Cliente Web (Navegador)</p>
+    </div>
+
+    <div class="arrow h-12"></div>
+
+    <!-- EC2 Apache Laravel -->
+    <div class="text-center bg-white shadow-xl rounded-xl p-6 w-full max-w-xl">
+      <img src="https://cdn-icons-png.flaticon.com/512/873/873107.png" class="w-14 mx-auto mb-2" alt="EC2">
+      <p class="text-xl font-bold mb-1">Instancia EC2 - Ubuntu 22.04</p>
+      <p class="text-sm">Apache2 + PHP + Laravel 12 + Livewire 3 + TailwindCSS 4</p>
+      <p class="text-sm">Ubicación: /home/ubuntu/SISFARMA</p>
+    </div>
+
+    <div class="arrow h-12"></div>
+
+    <!-- Base de Datos -->
+    <div class="text-center bg-white shadow-md rounded-xl p-6 w-full max-w-md">
+      <img src="https://cdn-icons-png.flaticon.com/512/2721/2721624.png" class="w-14 mx-auto mb-2" alt="MySQL">
+      <p class="text-xl font-bold mb-1">MySQL Server</p>
+      <p class="text-sm">Base de datos: sisfarma</p>
+      <p class="text-sm">Puerto: 3306 (localhost)</p>
+    </div>
+
+    <div class="arrow h-12"></div>
+
+    <!-- CI/CD GitHub -->
+    <div class="text-center bg-white shadow-md rounded-xl p-6 w-full max-w-md">
+      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" class="w-14 mx-auto mb-2" alt="GitHub">
+      <p class="text-xl font-bold mb-1">CI/CD - GitHub Actions</p>
+      <p class="text-sm">Despliegue automático por push a <code>main</code></p>
+      <p class="text-sm">Conexión vía SSH a EC2</p>
+    </div>
+
+    <div class="arrow h-12"></div>
+
+    <!-- Seguridad -->
+    <div class="text-center bg-white shadow-md rounded-xl p-6 w-full max-w-md">
+      <img src="https://cdn-icons-png.flaticon.com/512/595/595067.png" class="w-14 mx-auto mb-2" alt="Seguridad">
+      <p class="text-xl font-bold mb-1">Seguridad en AWS</p>
+      <ul class="text-sm text-left list-disc list-inside">
+        <li>Grupo de Seguridad EC2</li>
+        <li>Certificado SSL (HTTPS)</li>
+        <li>Permisos de archivo: storage, bootstrap/cache</li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -44,7 +44,7 @@
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="d-none d-md-flex align-items-center">
-          <i class="bi bi-clock me-1"></i> Monday - Saturday, 8AM to 10PM
+          <i class="bi bi-clock me-1"></i> Monday - Sunday, 9000000
         </div>
         <div class="d-flex align-items-center">
           <i class="bi bi-phone me-1"></i> Call us now +1 5589 55488 55
