@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8000:80"
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - DB_CONNECTION=mysql
+      - DB_HOST=mysql
+      - DB_PORT=3306
+      - DB_DATABASE=sispharma
+      - DB_USERNAME=root
+      - DB_PASSWORD=password123
+    depends_on:
+      - mysql
+    volumes:
+      - ./storage:/var/www/html/storage
+    networks:
+      - sisfarma-network
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=password123
+      - MYSQL_DATABASE=sispharma
+      - MYSQL_CHARACTER_SET_SERVER=utf8mb4
+      - MYSQL_COLLATION_SERVER=utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - sisfarma-network
+
+volumes:
+  mysql_data:
+
+networks:
+  sisfarma-network:
+    driver: bridge
